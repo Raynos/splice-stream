@@ -17,15 +17,14 @@
     "email": "raynos2@gmail.com"
   },
   "dependencies": {
+    "source-stream": "0.0.1"
   },
-  "devDependencies": {
-  },
+  "devDependencies": {},
   "licenses": [
     {
       "type": "MIT",
       "url": "http://github.com/Raynos/splice-stream/raw/master/LICENSE"
     }
   ],
-  "scripts": {
-  }
+  "scripts": {}
 }
