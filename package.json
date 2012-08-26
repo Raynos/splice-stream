@@ -1,0 +1,31 @@
+{
+  "name": "splice-stream",
+  "version": "0.0.1",
+  "description": "Stream changes to an array",
+  "keywords": [],
+  "author": "Raynos <raynos2@gmail.com>",
+  "repository": "git://github.com/Raynos/splice-stream.git",
+  "main": "index",
+  "homepage": "https://github.com/Raynos/splice-stream",
+  "contributors": [
+    {
+      "name": "Jake Verbaten"
+    }
+  ],
+  "bugs": {
+    "url": "https://github.com/Raynos/splice-stream/issues",
+    "email": "raynos2@gmail.com"
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://github.com/Raynos/splice-stream/raw/master/LICENSE"
+    }
+  ],
+  "scripts": {
+  }
+}
