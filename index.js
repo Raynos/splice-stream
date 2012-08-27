@@ -7,13 +7,17 @@ module.exports = SpliceStream
 
 function SpliceStream(id) {
     var stream = Source()
-        , list = List(stream)
+        , list
 
     stream.createList = returnList
 
     return stream
 
     function returnList() {
+        if (!list) {
+            list = List(stream)
+        }
+        
         return list
     }
 }
