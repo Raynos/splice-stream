@@ -10,8 +10,8 @@ list1.on("add", function (item, index) {
     console.log("[LIST1]", item, index)
 })
 
-list2.on("remove", function (item) {
-    console.log("[LIST2]", item)
+list2.on("remove", function (item, index) {
+    console.log("[LIST2]", item, index)
 })
 
 stream2.pipe(stream1).pipe(stream2)

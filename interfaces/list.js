@@ -83,7 +83,7 @@ function List(stream) {
         for (var j = 0; j < removed.length; j++) {
             item = removed[j]
 
-            list.emit("remove", item)
+            list.emit("remove", item, index + j)
         }
 
         for (var i = 0; i < items.length; i++) {
