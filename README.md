@@ -24,16 +24,16 @@ var list1 = stream1.createList()
     , list2 = stream2.createList()
 
 list1.on("add", function (item, index) {
-    console.log("[LIST1]", item)
+    console.log("[LIST1]", item, index)
 })
 
-list2.on("remove", function (item, index) {
+list2.on("remove", function (item) {
     console.log("[LIST2]", item)
 })
 
 stream2.pipe(stream1).pipe(stream2)
 
-list2.push("bar") // [LIST1] bar
+list2.push("bar") // [LIST1] bar 0
 
 console.log("lengths", list1.length(), list2.length()) // lengths 1 1
 
