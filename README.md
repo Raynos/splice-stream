@@ -23,11 +23,11 @@ var stream1 = SpliceStream()
 var list1 = stream1.createList()
     , list2 = stream2.createList()
 
-list1.on("add", function (item) {
+list1.on("add", function (item, index) {
     console.log("[LIST1]", item)
 })
 
-list2.on("remove", function (item) {
+list2.on("remove", function (item, index) {
     console.log("[LIST2]", item)
 })
 

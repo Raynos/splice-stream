@@ -76,6 +76,10 @@ function List(stream) {
             , removed = state.slice(index, index + howMany)
             , item
 
+        var result = state.splice.apply(state, args)
+
+        list.emit("splice", args, source)
+
         for (var j = 0; j < removed.length; j++) {
             item = removed[j]
 
@@ -84,16 +88,9 @@ function List(stream) {
 
         for (var i = 0; i < items.length; i++) {
             item = items[i]
-            // If not in list state
-            // or has been removed from list state
-            if (state.indexOf(item) === -1 || removed.indexOf(item) !== -1) {
-                list.emit("add", item)
-            }
+            
+            list.emit("add", item, state.indexOf(item))
         }
-
-        list.emit("splice", args, source)
-
-        return state.splice.apply(state, args)
     }
 
     function splice(index, howMany) {
