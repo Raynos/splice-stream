@@ -11,7 +11,6 @@ module.exports = List
     Events:
       - add <item>
       - remove <item>
-      - move <item, oldIndex, newIndex>
       - splice <args, source>
 */
 function List(stream) {
@@ -71,9 +70,27 @@ function List(stream) {
     }
 
     function spliceWithSource(args, source) {
-        /*
-            Logic for add / remove / move events
-        */
+        var index = args[0]
+            , howMany = args[1]
+            , items = args.slice(2)
+            , removed = state.slice(index, index + howMany)
+            , item
+
+        for (var j = 0; j < removed.length; j++) {
+            item = removed[j]
+
+            list.emit("remove", item)
+        }
+
+        for (var i = 0; i < items.length; i++) {
+            item = items[i]
+            // If not in list state
+            // or has been removed from list state
+            if (state.indexOf(item) === -1 || removed.indexOf(item) !== -1) {
+                list.emit("add", item)
+            }
+        }
+
         list.emit("splice", args, source)
 
         return state.splice.apply(state, args)
@@ -93,7 +110,7 @@ function List(stream) {
         var lastIndex = state.length - 1
             , last = state[lastIndex]
 
-        slice(lastIndex, 1)
+        splice(lastIndex, 1)
 
         return last
     }
@@ -101,7 +118,7 @@ function List(stream) {
     function shift() {
         var first = state[0]
 
-        slice(0, 1)
+        splice(0, 1)
 
         return first
     }
