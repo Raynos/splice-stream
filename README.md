@@ -44,8 +44,19 @@ list1.shift() // [LIST2] bar
 
 `npm install splice-stream`
 
+## Compatible modules
+
+ - [element-list][1]
+
+## Compatible minus one issue
+
+ - [crdt][2]
+
 ## Contributors
 
  - Raynos
 
 ## MIT Licenced
+
+  [1]: https://github.com/Raynos/element-list
+  [2]: https://github.com/dominictarr/crdt/issues/3

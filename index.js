@@ -10,6 +10,7 @@ function SpliceStream(id) {
         , list
 
     stream.createList = returnList
+    stream.sync = sync
 
     return stream
 
@@ -19,5 +20,12 @@ function SpliceStream(id) {
         }
         
         return list
+    }
+
+    function sync(other) {
+        var selfList = returnList()
+            , otherList = other.createList()
+
+        selfList.sync(otherList)
     }
 }
