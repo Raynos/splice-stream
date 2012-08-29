@@ -92,11 +92,13 @@ function List(stream) {
             
             list.emit("add", item, state.indexOf(item))
         }
+
+        return result
     }
 
     function splice(index, howMany) {
         var args = slice.call(arguments)
-        spliceWithSource(args, list.id)
+        return spliceWithSource(args, list.id)
     }
 
     // length is a global variable -.-

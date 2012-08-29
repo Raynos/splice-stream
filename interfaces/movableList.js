@@ -36,6 +36,8 @@ function MovableList(list) {
             movableList.emit("add", item, newIndex)
         } else {
             movableList.emit("move", item, newIndex, data.oldIndex)
+            var index = removeBuffer.indexOf(data)
+            removeBuffer.splice(index, 1)
         }
     }
 
