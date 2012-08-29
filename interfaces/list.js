@@ -27,6 +27,7 @@ function List(stream) {
     list.length = _length
     list.pop = pop
     list.shift = shift
+    list.remove = remove
     list.toJSON = toJSON
     list.createStream = returnStream
     list.sync = sync
@@ -118,6 +119,12 @@ function List(stream) {
         splice(0, 1)
 
         return first
+    }
+
+    function remove(item) {
+        var index = indexOf(item)
+
+        return splice(index, 1)
     }
 
     function toJSON() {
